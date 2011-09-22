@@ -8,6 +8,7 @@ gem 'rails', '3.1.0'
 gem 'mysql2'
 gem 'will_paginate', '3.0.pre2'
 gem 'devise'
+gem 'cancan'
 
 group :development do
   gem 'annotate', '2.4.0'
