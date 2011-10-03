@@ -1,11 +1,21 @@
 Loveallogy::Application.routes.draw do
   devise_for :users
 
-  get "pages/contact"
-  get "pages/about"
-  get "pages/help"
-  
+
+  match '/contact', :to => 'pages#contact'
+  match '/about',   :to => 'pages#about'
+  match '/help',    :to => 'pages#help'
+  match '/dashboard', :to => 'dashboard#home'
+  get "dashboard/dreams"
+  get "dashboard/happiness"
+  get "dashboard/change"
+    
   root :to => "pages#home"
+  
+  devise_scope :user do
+    get "login", :to => "devise/sessions#new"
+    get "join", :to => "devise/registrations#new"
+  end
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
