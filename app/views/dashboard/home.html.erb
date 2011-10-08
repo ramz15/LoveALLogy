@@ -1,11 +1,8 @@
 <div class="dashboard">
-  <ul id="nav">
-    <li><a href="/dashboard">Home</a></li>
-    <li><a href="/dreams">Dreams</a></li>
-    <li><a href="/happiness">Happiness</a></li>
-    <li><a href="/change">Change</a></li>
-  </ul>
+  <%= render 'dashboard/nav' %>
   <div id="dash_content">
+    <%= link_to brain, '/happiness' %>
+    
     <div id="left">
       
     </div>

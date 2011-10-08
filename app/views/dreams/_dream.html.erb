@@ -1,0 +1,12 @@
+<tr>
+  <td class="dream">
+    <span class="content"><%= dream.content %></span>
+  </td>
+  <% if current_user?(user) %>
+  <td>
+    <%= link_to "delete", dream, :method => :delete,
+                                     :confirm => "You sure?",
+                                     :title => dream.content %>
+  </td>
+  <% end %>
+</tr>

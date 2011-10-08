@@ -9,7 +9,7 @@ class User < ActiveRecord::Base
   
   has_many :dreams, :dependent => :destroy
   
-  ROLES = %w[admin moderator pro banned]
+  ROLES = %w[regular admin moderator pro banned]
   
   def role?(base_role)
     ROLES.index(base_role.to_s) <= ROLES.index(role)

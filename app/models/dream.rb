@@ -6,5 +6,5 @@ class Dream < ActiveRecord::Base
   validates :content, :presence => true
   validates :user_id, :presence => true
   
-  acts_as_voteable  
+  acts_as_voteable
 end

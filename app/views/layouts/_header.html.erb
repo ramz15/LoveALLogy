@@ -2,13 +2,14 @@
   <%= link_to logo, root_path %>
   <nav class="round">
     <ul>
+      <li><%= @user.email if user_signed_in? %></li>
       <li><%= link_to "Home", root_path %></li>
       <% if user_signed_in? %>
       <li><%= link_to "Users", "#" %></li>
       <li><%= link_to "Profile", '#' %></li>
       <li><%= link_to "Settings", "#" %></li>
       <% end %>
-      <li><%= link_to "Help", 'pages/help' %></li>
+      <li><%= link_to "Help", '/help' %></li>
       <% if signed_in? %>
       <li><%= link_to "Sign out", destroy_user_session_path, :method => :delete %></li>
       <% else %>

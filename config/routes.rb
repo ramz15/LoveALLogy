@@ -1,21 +1,31 @@
 Loveallogy::Application.routes.draw do
   devise_for :users
+  resources :dreams, :only => [:create, :destroy, :up_vote]
+  resources :loves, :except => [:index]
+  #resources :users, :only => :show
 
-
+  get "users/show"
+  post "dreams/up_vote"
+  post "dreams/down_vote"
+  
   match '/contact', :to => 'pages#contact'
   match '/about',   :to => 'pages#about'
   match '/help',    :to => 'pages#help'
   match '/dashboard', :to => 'dashboard#home'
-  get "dashboard/dreams"
-  get "dashboard/happiness"
-  get "dashboard/change"
-    
+  match '/dreams', :to => 'dashboard#dreams'
+  match '/happiness', :to => 'dashboard#happiness'
+  match '/change', :to => 'dashboard#change'
+  
   root :to => "pages#home"
   
   devise_scope :user do
     get "login", :to => "devise/sessions#new"
     get "join", :to => "devise/registrations#new"
   end
+  
+  #resources :dreams 
+  
+  #get "dashboard/dreams"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

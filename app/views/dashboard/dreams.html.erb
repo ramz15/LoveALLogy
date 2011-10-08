@@ -1,1 +1,34 @@
-<h1>Live your Dream.</h1>
+<div class="dashboard">
+  <%= render 'dashboard/nav' %>
+  <div id="dash_content">
+    <h2 class="center">Live your Dream.</h2>
+    
+    <h3>Find your Passion:</h3>
+    
+    
+    <h3>What's your Dream?</h3>
+      <%= render 'shared/dreams_form' %>
+      <table class="dream_list" summary="User Dreams">
+        <% unless @user.dreams.empty? %>
+          <% @user.dreams.each do |dream| %>
+            <li>
+              <%= dream.content %> 
+              <%= link_to up_vote, dreams_up_vote_path(dream), :method => :post %> 
+              <%= link_to down_vote, dreams_down_vote_path(dream), :method => :post %>
+              <%= @dream.votes %>
+              
+            </li>
+          <% end %>     
+        <% end %>
+      </table>
+      
+    <div id="left">
+    </div>
+    <div id="main">
+    
+    </div>    
+  </div>
+</div>
+
+
+
