@@ -8,6 +8,7 @@ class User < ActiveRecord::Base
   attr_accessible :email, :password, :password_confirmation, :remember_me
   
   has_many :dreams, :dependent => :destroy
+  has_many :highlights, :dependent => :destroy
   
   ROLES = %w[regular admin moderator pro banned]
   

@@ -1,12 +1,12 @@
 Loveallogy::Application.routes.draw do
   devise_for :users
-  resources :dreams, :only => [:create, :destroy, :up_vote]
-  resources :loves, :except => [:index]
+  resources :dreams, :only => [:create, :destroy, :vote_up, :vote_down]
+  resources :highlights, :only => [:create, :destroy]
   #resources :users, :only => :show
 
   get "users/show"
-  post "dreams/up_vote"
-  post "dreams/down_vote"
+  post "dreams/vote_up"
+  post "dreams/vote_down"
   
   match '/contact', :to => 'pages#contact'
   match '/about',   :to => 'pages#about'
@@ -15,6 +15,7 @@ Loveallogy::Application.routes.draw do
   match '/dreams', :to => 'dashboard#dreams'
   match '/happiness', :to => 'dashboard#happiness'
   match '/change', :to => 'dashboard#change'
+  match '/links', :to => 'dashboard#links'
   
   root :to => "pages#home"
   

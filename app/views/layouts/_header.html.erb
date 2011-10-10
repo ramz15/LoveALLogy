@@ -1,5 +1,5 @@
 <header>
-  <%= link_to logo, root_path %>
+  <%= link_to logo, '/dashboard' %>
   <nav class="round">
     <ul>
       <li><%= @user.email if user_signed_in? %></li>
@@ -10,7 +10,7 @@
       <li><%= link_to "Settings", "#" %></li>
       <% end %>
       <li><%= link_to "Help", '/help' %></li>
-      <% if signed_in? %>
+      <% if user_signed_in? %>
       <li><%= link_to "Sign out", destroy_user_session_path, :method => :delete %></li>
       <% else %>
       <li><%= link_to "Sign in", new_user_session_path %></li>

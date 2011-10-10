@@ -3,8 +3,7 @@
   <div id="dash_content">
     <h2 class="center">Live your Dream.</h2>
     
-    <h3>Find your Passion:</h3>
-    
+    <h3>Select your interests:</h3>
     
     <h3>What's your Dream?</h3>
       <%= render 'shared/dreams_form' %>
@@ -12,11 +11,10 @@
         <% unless @user.dreams.empty? %>
           <% @user.dreams.each do |dream| %>
             <li>
+              <%= dream.votes.count %>
+              <%= link_to up_vote, dreams_vote_up_path(dream), :method => :post %> 
+              <%= link_to down_vote, dreams_vote_down_path(dream), :method => :post %>
               <%= dream.content %> 
-              <%= link_to up_vote, dreams_up_vote_path(dream), :method => :post %> 
-              <%= link_to down_vote, dreams_down_vote_path(dream), :method => :post %>
-              <%= @dream.votes %>
-              
             </li>
           <% end %>     
         <% end %>

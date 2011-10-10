@@ -13,3 +13,8 @@ Factory.define :dream do |dream|
   dream.content "Foo bar"
   dream.association :user
 end
+
+Factory.define :highlight do |highlight|
+  highlight.content "Foo bar"
+  highlight.association :user
+end

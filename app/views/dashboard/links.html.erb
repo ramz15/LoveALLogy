@@ -1,22 +1,22 @@
 <div class="dashboard">
   <%= render 'dashboard/nav' %>
   <div id="dash_content">
-    <h2>Be Happy.</h2>    
+    <h2>Links</h2>    
       <table class="front" summary="For signed-in users">
         <tr>
           <td class="main">
-            <h3 class="highlight">What was your highlight of the day?</h3>
-            <%= render 'shared/highlight_form' %>
+            <h3 class="highlight">Whats the best resource to learn this subject?</h3>
+            <%= render 'shared/link_form' %>
           </td>
         </tr>    
       </table>
       
     <td class="main">
-      <% unless @user.highlights.empty? %>
+      <% unless @user.links.empty? %>
         <table class="highlights" summary="User highlights">
-          <%= render @highlights %>
+          <%= render @links %>
         </table>
-        <%= will_paginate @highlights %>
+        <%= will_paginate @links %>
       <% end %>
     </td>  
     

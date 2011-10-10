@@ -1,13 +1,16 @@
 class DreamsController < ApplicationController
-  before_filter :authenticate_user!
   #before_filter :authenticate, :only => [:create, :destroy]
-  before_filter :authorized_user, :only => :destroy
+  #before_filter :authorized_user, :only => :destroy
   
   def create
     @dream = current_user.dreams.build(params[:dream])
     if @dream.save
       flash[:success] = "Dream created!"
-      redirect_to '/dreams'
+      respond_to do |format|
+        format.html { redirect_to '/dreams'}
+        format.js
+      end  
+      #redirect_to '/dreams'
     else
       @feed_items = []
       render '/dreams'
@@ -19,7 +22,7 @@ class DreamsController < ApplicationController
     redirect_back_or root_path    
   end
   
-  def up_vote
+  def vote_up
     @user = current_user
     @dream = Dream.find(current_user.id)
     #begin
@@ -35,7 +38,7 @@ class DreamsController < ApplicationController
     #end
   end  
   
-  def down_vote
+  def vote_down
     @user = current_user
     @dream = Dream.find(current_user.id)
     unless @user.voted_against?(@dream)

@@ -3,7 +3,7 @@ class PagesController < ApplicationController
   def home
     @title = "Home"
     if user_signed_in?
-      @dream = Dream.new
+      @user = current_user
       # @feed_items = current_user.feed.paginate(:page => params[:page]) 
     end
   end

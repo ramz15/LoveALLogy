@@ -1,4 +1,6 @@
-
+<% if user_signed_in? %>
+  <%= render 'dashboard' %>
+<% else %>  
   <div class="home">  
     <h1 class="home">Live your Dream. </br>
                      Change the World.</br>
@@ -8,4 +10,5 @@
         <%= link_to "Join your Dream", new_user_registration_path, :class => "signup_button round"%>
       </div>  
   </div>
+<% end %>  
   

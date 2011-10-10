@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110926151800) do
+ActiveRecord::Schema.define(:version => 20111008182115) do
 
   create_table "dreams", :force => true do |t|
     t.string   "content"
@@ -21,6 +21,15 @@ ActiveRecord::Schema.define(:version => 20110926151800) do
   end
 
   add_index "dreams", ["user_id", "updated_at"], :name => "index_dreams_on_user_id_and_updated_at"
+
+  create_table "highlights", :force => true do |t|
+    t.string   "content"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "highlights", ["user_id", "created_at"], :name => "index_highlights_on_user_id_and_created_at"
 
   create_table "users", :force => true do |t|
     t.string   "email",                                 :default => "", :null => false

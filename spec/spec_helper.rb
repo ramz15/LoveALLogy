@@ -99,9 +99,9 @@ RSpec.configure do |config|
   config.include Devise::TestHelpers, :type => :controller
   config.extend ControllerMacros, :type => :controller
   
-  # def test_sign_in(user)
-  #  controller.sign_in(user)
-  # end
+  def test_sign_in(user)
+    controller.sign_in(user)
+  end
   
   #def integration_sign_in(user)
   #  visit signin_path
