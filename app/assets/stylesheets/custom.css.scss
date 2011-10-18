@@ -21,7 +21,7 @@ h1, h2, h3, h4, h5, h6 {
 	min-height: 100%;
 	height: auto !important;
 	height: 100%;
-	width: 800px;
+	width: 900px;
 	margin: 0 auto -50px; /* the bottom margin is the negative value of the footer's height */
 }
 
@@ -371,13 +371,33 @@ form .sign_in input, {
 .sign_in {
   margin-left: auto;
   margin-right: auto;
-  width: 300px;
-  height: 250px;
+  width: 400px;
+  height: 300px;
   text-align: center;
+  border: 1px solid silver;
+  border-radius: 6px;
+  -moz-border-radius: 6px;
+  -webkit-border-radius: 6px;
+  background: whiteSmoke;
+  background: -webkit-gradient(linear,center top,center bottom,from(white),to(whiteSmoke));
+  background: -moz-linear-gradient(top,white,whiteSmoke);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffffff',endColorstr='#fff5f5f5',GradientType=0);
+  box-shadow: inset 0 0 3px white,0 2px 2px -2px rgba(0,0,0,0.2);
+  -o-box-shadow: inset 0 0 3px white,0 2px 2px -2px rgba(0,0,0,0.2);
+  -moz-box-shadow: inset 0 0 3px white,0 2px 2px -2px rgba(0,0,0,0.2);
+  -webkit-box-shadow: inset 0 0 3px white,0 2px 2px -2px rgba(0,0,0,0.2);
 }
 
 textarea:focus, input:focus {
         border: 2px solid #09c;
+}
+
+.text_input {
+  width: 350px;
+  height: 44px;
+  position: relative;
+  margin: 12px auto 0 auto;
+  cursor: text;
 }
 
 /* Dashboard */
@@ -390,7 +410,7 @@ textarea:focus, input:focus {
   border-top-left-radius: 10px;
   -moz-border-radius-topleft: 10px;
   -webkit-border-top-left-radius: 10px;
-  width: 800px;
+  width: 900px;
   min-height: 500px;
   padding: 8px 8px 8px 8px;
   margin: 0;
@@ -404,7 +424,7 @@ textarea:focus, input:focus {
   border-top-left-radius: 10px;
   -moz-border-radius-topleft: 10px;
   -webkit-border-top-left-radius: 10px;
-  width: 800px;
+  width: 900px;
   height: 42px;
   list-style-type: none;
   margin: 0;

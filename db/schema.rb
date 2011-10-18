@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111008182115) do
+ActiveRecord::Schema.define(:version => 20111010202849) do
 
   create_table "dreams", :force => true do |t|
     t.string   "content"
@@ -30,6 +30,16 @@ ActiveRecord::Schema.define(:version => 20111008182115) do
   end
 
   add_index "highlights", ["user_id", "created_at"], :name => "index_highlights_on_user_id_and_created_at"
+
+  create_table "links", :force => true do |t|
+    t.string   "url"
+    t.string   "title"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "links", ["user_id", "url", "title"], :name => "index_links_on_user_id_and_url_and_title"
 
   create_table "users", :force => true do |t|
     t.string   "email",                                 :default => "", :null => false
