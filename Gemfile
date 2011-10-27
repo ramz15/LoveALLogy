@@ -7,7 +7,7 @@ gem 'rails', '3.1.0'
 
 gem 'mysql2'
 gem 'will_paginate', '3.0.pre2'
-gem 'devise'
+gem 'devise', '1.4.9'
 gem 'cancan'
 gem 'thumbs_up'
 gem 'oauth2'
