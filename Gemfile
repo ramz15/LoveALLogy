@@ -10,6 +10,7 @@ gem 'will_paginate', '3.0.pre2'
 gem 'devise'
 gem 'cancan'
 gem 'thumbs_up'
+gem 'oauth2'
 
 group :development do
   gem 'annotate', '2.4.0'
